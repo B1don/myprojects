@@ -1,0 +1,79 @@
+import math
+
+whaUWant = input("Что вы хотите: ")
+
+if whaUWant == "calculator":
+    operation = input("Вид операции: ")
+
+    if operation == "simple": # + - * /
+        operation = input("Какая именно операция: ")
+        fNumber = float(input("Первое число: "))
+        sNumber = float(input("Второе число: "))
+
+        if operation == "+":
+            result = fNumber + sNumber
+        elif operation == "-":
+            result = fNumber - sNumber
+        elif operation == "*":
+            result = fNumber * sNumber
+        elif operation == "/":
+            result = fNumber / sNumber  
+        
+    if operation == "hard": # sqrt pow log fact
+        operation = input("Какая именно операция: ")
+        fNumber = float(input("Число: "))
+
+        if operation == "sqrt":
+            result = math.sqrt(fNumber)
+        if operation == "pow":
+            sNumber = float(input("Второе число: "))
+            result = math.pow(fNumber, sNumber)
+        if operation == "log":
+            sNumber = float(input("Второе число: "))
+            result = math.log(fNumber, sNumber)
+        if operation == "fact":
+            fNumber = int(fNumber)
+            result = math.factorial(fNumber)
+
+    if operation == "trig": # sin arcsin cos arccos tg arctg
+        operation = input("Какая именно операция: ")
+        fNumber = float(input("Число: "))
+        
+        if operation == "sin":
+            result = math.sin(fNumber)
+        elif operation == "arcsin":
+            result = math.asin(fNumber)
+        elif operation == "cos":
+            result = math.cos(fNumber)
+        elif operation == "arccos":
+            result = math.acos(fNumber)
+        elif operation == "tg":
+            result = math.tan(fNumber)
+        elif operation == "arctg":
+            result = math.atan(fNumber) 
+
+    print(f"Ответ: {result}")
+
+if whaUWant == "tables":
+    fNumber = int(input("Введите первое число: "))
+    sNumber = int(input("Введите второе число: "))
+    whatTheTable = input("Какая это таблица: ")
+    i = 1
+    j = 1
+    if whatTheTable == "gent":
+        while i <= fNumber:
+            while j <= sNumber:
+                print(i * j, end="\t")
+                j += 1
+            print("\n")
+            j = 1
+            i += 1
+
+    if whatTheTable == "powt":
+        while i <= fNumber:
+            while j <= sNumber:
+                print(int(math.pow(i, j)), end="\t")
+                j += 1
+            print("\n")
+            j = 1
+            i += 1
